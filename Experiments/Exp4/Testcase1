@@ -1,0 +1,12 @@
+clc; 
+L = 10; 
+Q = 50e-6;
+lambda = Q / L; // Line charge density (C/m) 
+disp("Line charge density (lambda) = " + string(lambda) + " C/m"); 
+r = linspace(0.1, 5, 100); // Distance (m) 
+ke = 8.99e9; // Coulomb's constant (N*m^2/C^2) 
+E = (ke * lambda) ./ r; // Electric field (N/C)  
+plot(r, E, "r"); 
+xlabel("Distance (m)"); 
+ylabel("Electric Field (N/C)"); 
+title("Electric Field from a Uniformly Charged Wire"); 
