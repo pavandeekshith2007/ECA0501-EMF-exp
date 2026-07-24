@@ -1,0 +1,13 @@
+clc; 
+R = 0.5;
+Q = 10e-6;
+A = %pi * R^2;
+sigma = Q / A;
+disp("Surface charge density (sigma) = " + string(sigma) + " C/m^2"); 
+z = linspace(0.1, 2, 100); // Distance (m) 
+ke = 8.99e9; // Coulomb's constant (N*m^2/C^2) 
+E_disk = (ke * sigma * R^2) ./ (2 * (z.^2 + R^2).^(3/2));
+plot(z, E_disk, "b"); 
+xlabel("Distance (m)"); 
+ylabel("Electric Field (N/C)"); 
+title("Electric Field from a Uniformly Charged Disk");
