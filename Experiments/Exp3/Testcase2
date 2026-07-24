@@ -1,0 +1,10 @@
+clc; 
+ke = 8.99e9; 
+q1 = 5e-6;
+q2 = 2e-6;
+r = linspace(0.5, 5, 100);
+F = ke * abs(q1 * q2) ./ r.^2; 
+plot(r, F, "b"); 
+xlabel("Distance (m)"); 
+ylabel("Force (N)"); 
+title("Force of Attraction Between Two Point Charges (Different Magnitudes)") 
