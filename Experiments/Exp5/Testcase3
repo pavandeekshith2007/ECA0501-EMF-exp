@@ -1,0 +1,10 @@
+clc;
+r1_case3 = linspace(0.5, 5, 100);
+r2_case3 = linspace(5, 10, 100); 
+deltaV_case3 = k * q * (1 ./ r1_case3 - 1 ./ r2_case3); 
+clf(); 
+subplot(3, 1, 3); 
+plot(r1_case3, deltaV_case3, "g"); 
+xlabel("r1 (m)"); 
+ylabel("Delta V (V)"); 
+title("Case 3: Positive Charge, Both r1 and r2 Vary"); 
