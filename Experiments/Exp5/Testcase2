@@ -1,0 +1,10 @@
+q_case2 = -1e-6;
+r1_case2 = 1;
+r2_case2 = linspace(1.1, 10, 100); 
+deltaV_case2 = k * q_case2 * (1 / r1_case2 - 1 ./ r2_case2); 
+clf(); 
+subplot(3, 1, 2); 
+plot(r2_case2, deltaV_case2, "b"); 
+xlabel("r2 (m)"); 
+ylabel("Delta V (V)"); 
+title("Case 2: Negative Charge, Fixed r1");
