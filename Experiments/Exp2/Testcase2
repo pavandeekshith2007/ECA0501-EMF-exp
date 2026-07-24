@@ -1,0 +1,27 @@
+rho0 = 1e-6; 
+epsilon = 8.854e-12;
+R = 1;
+n = 100;
+r = linspace(0, R, n); 
+D = zeros(1, n); 
+E = zeros(1, n); 
+for i = 1:n 
+    ri = r(i); 
+    Q_enclosed = rho0 * %pi * ri^4; 
+    if ri ~= 0 then 
+        D(i) = Q_enclosed / (4 * %pi * ri^2); 
+    else 
+        D(i) = 0;
+    end 
+    E(i) = D(i) / epsilon; 
+end  
+subplot(1, 2, 1); 
+plot(r, D, "r"); 
+xlabel("Radius (m)"); 
+ylabel("Electric Flux Density (D) [C/m^2]"); 
+title("Linear Density: D vs. Radius"); 
+subplot(1, 2, 2); 
+plot(r, E, "b"); 
+xlabel("Radius (m)"); 
+ylabel("Electric Field (E) [V/m]"); 
+title("Linear Density: E vs. Radius"); 
