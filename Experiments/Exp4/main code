@@ -1,32 +1,44 @@
-clc; 
-clear; 
-q=input("Enter the charge value is:"); 
-l=input("Enter the length value is:");
-rl=(q/l); 
-disp('the line charge density is',[rl]);  
-pi=3.14; 
-r=input("Enter the radius value is:"); 
-rs=q/(4*pi*r^2); 
-disp('the surface charge density is',[rs]); 
-rv=q/(1.33*pi*r^3); 
-disp('the volume charge density is',[rv]); 
-x = linspace(0, 10, 50);  
-y = rl*exp(-0.1 * x);  
-z = rs*exp(-0.1 * x); 
-v = rv*exp(-0.1 * x); 
-figure();  
-subplot(2, 2, 1);  
-plot2d3(x,y);  
-title('the line charge density is');  
-xlabel("length"); 
-ylabel("rho l"); 
-subplot(2, 2, 2);  
-plot2d3(x,z);  
-title('the surface charge density is'); 
-xlabel("length"); 
-ylabel("rho s"); 
-subplot(2,2,3); 
-plot2d3(x,v); 
-title('the volume charge density is'); 
-xlabel("length"); 
+clc;
+clear;
+
+// Inputs
+q = input("Enter the charge value: ");
+l = input("Enter the length value: ");
+
+// Line charge density
+rl = q / l;
+disp(rl, "The line charge density is:");
+
+// Surface charge density
+r = input("Enter the radius value: ");
+rs = q / (4 * %pi * r^2);
+disp(rs, "The surface charge density is:");
+
+// Volume charge density
+rv = q / ((4/3) * %pi * r^3);
+disp(rv, "The volume charge density is:");
+
+// Plotting
+x = linspace(0, 10, 50);
+y = rl * exp(-0.1 * x);
+z = rs * exp(-0.1 * x);
+v = rv * exp(-0.1 * x);
+
+figure();
+subplot(2,2,1);
+plot(x,y);
+title("Line charge density");
+xlabel("Length");
+ylabel("rho l");
+
+subplot(2,2,2);
+plot(x,z);
+title("Surface charge density");
+xlabel("Length");
+ylabel("rho s");
+
+subplot(2,2,3);
+plot(x,v);
+title("Volume charge density");
+xlabel("Length");
 ylabel("rho v");
