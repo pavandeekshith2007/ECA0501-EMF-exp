@@ -1,0 +1,25 @@
+clc; 
+clear; 
+a1=input("Enter the a1 value is:"); 
+d=input("Enter the d value is:"); 
+ 
+e=8.854*10^-12; 
+c=e*a1/d; 
+disp(c); 
+d = linspace(0, 10, 50);  
+y = c * exp(-0.1 * d);  
+ 
+plot2d3(d,y); 
+xlabel("d"); 
+ylabel("capacitance"); 
+title("Parallel plate capacity"); 
+ 
+a2=input("Enter the a2 value is:"); 
+d1=input("Enter the d1 value is:"); 
+d2=input("Enter the d2 value is:"); 
+d3=input("Enter the d3 value is:"); 
+er1=input("Enter the er1 value is:"); 
+er2=input("Enter the er2 value is:");
+er3=input("Enter the er13 value is:"); 
+c1=e*a2/((d1/er1)+(d2/er2)+(d3/er3)); 
+disp(c1); 
